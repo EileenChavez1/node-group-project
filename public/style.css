@@ -1,0 +1,94 @@
+/* =========================================
+   SHARED BASE STYLES (DO NOT REMOVE)
+========================================= */
+
+/* Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General page layout */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 40px;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Headings */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* =========================================
+   NAVIGATION STYLES (SHARED)
+========================================= */
+
+nav {
+    margin-top: 25px;
+}
+
+nav a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    background-color: #333;
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+nav a:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* =========================================
+   OPTIONAL BUTTON CLASS (For future use)
+========================================= */
+
+.button {
+    display: inline-block;
+    padding: 10px 18px;
+    margin-top: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #007acc;
+    color: white;
+}
+
+.button:hover {
+    background-color: #005fa3;
+}
+
+/* =========================================
+   TEAM MEMBER STYLE SECTIONS
+   Each person should only edit their section.
+   Do NOT remove shared styles above.
+========================================= */
+
+
+/* ===== HOME PAGE CUSTOM STYLES BELOW ===== */
+/* Add styles targeting .home-page here */
+
+
+
+/* ===== ABOUT PAGE CUSTOM STYLES BELOW ===== */
+/* Add styles targeting .about-page here */
+
+
+
+/* ===== FAQ PAGE CUSTOM STYLES BELOW ===== */
+/* Add styles targeting .faq-page here */
