@@ -1,24 +1,53 @@
-const fs = require('fs');
-const path = require('path');
+// visitorModule.js
+// Module for reading and writing visitor data
 
-const filePath = path.join(__dirname, 'visitors.txt');
+const fs = require("fs");
 
-function getVisitorCount() {
-    try {
-        const data = fs.readFileSync(filePath, 'utf8');
-        return parseInt(data);
-    } catch (err) {
-        return 0;
+const file = "visitors.txt";
+
+
+// Create file if it doesn't exist
+function initializeFile() {
+
+    if (!fs.existsSync(file)) {
+
+        const startingData = {
+            home: 0,
+            about: 0,
+            faq: 0
+        };
+
+        fs.writeFileSync(file, JSON.stringify(startingData, null, 2));
     }
 }
 
-function incrementVisitorCount() {
-    let count = getVisitorCount();
-    count++;
-    fs.writeFileSync(filePath, count.toString());
-    return count;
+
+// Get visit data
+function getVisits() {
+
+    initializeFile();
+
+    const data = fs.readFileSync(file);
+
+    return JSON.parse(data);
 }
 
+
+// Add visit to a page
+function addVisit(page) {
+
+    const visits = getVisits();
+
+    if (visits[page] !== undefined) {
+        visits[page]++;
+    }
+
+    fs.writeFileSync(file, JSON.stringify(visits, null, 2));
+}
+
+
+// Export functions
 module.exports = {
-    incrementVisitorCount
+    addVisit,
+    getVisits
 };

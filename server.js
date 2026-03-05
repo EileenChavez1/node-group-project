@@ -1,22 +1,53 @@
-const http = require('http');
-const visitorModule = require('./visitorModule');
+// server.js
+// Author: Eileen Hernandez Chavez
+// Purpose: Express web server with visitor tracking
 
-const port = 3000;
+const express = require("express");
+const path = require("path");
 
-const server = http.createServer((req, res) => {
+const visitorModule = require("./visitorModule");
 
-    if (req.url === '/' || req.url === '/home') {
-        const count = visitorModule.incrementVisitorCount();
+const app = express();
+const PORT = 3000;
 
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end(`Welcome to the site. Visitor count: ${count}`);
 
-    } else {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('Page Not Found');
-    }
+// Serve static files from public folder
+app.use(express.static(path.join(__dirname, "public")));
+
+
+// ---------- ROUTES ---------- //
+
+// Home Page
+app.get("/", (req, res) => {
+    visitorModule.addVisit("home");
+    res.sendFile(path.join(__dirname, "public", "home.html"));
 });
 
-server.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+
+// About Page
+app.get("/about", (req, res) => {
+    visitorModule.addVisit("about");
+    res.sendFile(path.join(__dirname, "public", "about.html"));
+});
+
+
+// FAQ Page
+app.get("/faq", (req, res) => {
+    visitorModule.addVisit("faq");
+    res.sendFile(path.join(__dirname, "public", "faq.html"));
+});
+
+
+// ---------- API ROUTE ---------- //
+
+app.get("/api/visits", (req, res) => {
+    const visits = visitorModule.getVisits();
+    res.json(visits);
+});
+
+
+// ---------- START SERVER ---------- //
+
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
 });
