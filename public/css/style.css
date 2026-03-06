@@ -107,6 +107,29 @@ nav a:hover {
 /* ===== ABOUT PAGE CUSTOM STYLES BELOW ===== */
 /* Add styles targeting .about-page here */
 
+.about-page {
+    background: linear-gradient(to bottom, #ffffff, #ffe8e8);
+}
+
+.about-page nav {
+    margin-bottom: 30px;
+}
+
+.about-page nav a {
+    margin: 0 10px;
+}
+
+.about-page h1 {
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.about-page h2 {
+    font-size: 26px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
 
 
 /* ===== FAQ PAGE CUSTOM STYLES BELOW ===== */
