@@ -84,6 +84,25 @@ nav a:hover {
 /* Add styles targeting .home-page here */
 
 
+.home-page {
+    background: linear-gradient(to bottom, #ffffff, #e8f0ff);
+}
+.home-page h1 {
+    font-size: 42px;
+
+}
+
+.home-page nav {
+    margin-bottom: 30px;
+}
+
+.home-page nav a {
+    margin: 0 10px;
+}
+
+
+
+
 
 /* ===== ABOUT PAGE CUSTOM STYLES BELOW ===== */
 /* Add styles targeting .about-page here */
